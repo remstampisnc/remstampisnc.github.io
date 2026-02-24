@@ -1,22 +1,428 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Showcase - REM Stampi</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>REM Stampi S.N.C. - Stampi in Plastica e Metallo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 24px;
+        }
+        
+        .company-name h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .company-name p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin: 2px 0 0 0;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1e3c72;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        #about {
+            background: #f8f9fa;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-content h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .about-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .info-box {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .info-box strong {
+            color: #1e3c72;
+        }
+        
+        #contacts {
+            background: #f8f9fa;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item p {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 0;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links {
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Welcome to REM Stampi</h1>
-        <p>Your trusted partner in metal and plastic stamping.</p>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">R</div>
+                <div class="company-name">
+                    <h1>REM Stampi</h1>
+                    <p>Stampi in Plastica e Metallo</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#servizi">Servizi</a>
+                <a href="#about">Chi Siamo</a>
+                <a href="#contacts">Contatti</a>
+            </nav>
+        </div>
     </header>
-    <section>
-        <h2>About Us</h2>
-        <p>Located in Fossò (VE), we specialize in high-quality stamping solutions for various industries.</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h2>Eccellenza nella Stampa di Componenti</h2>
+            <p>Da piccoli componenti a stampi complessi: soluzioni professionali in plastica e metallo</p>
+            <a href="#contacts" class="cta-btn">Contattaci</a>
+        </div>
     </section>
+
+    <!-- Services Section -->
+    <section id="servizi">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Stampi in Plastica</h3>
+                    <p>Produciamo stampi in plastica per piccoli e grandi componenti. Soluzioni su misura per ogni esigenza di produzione industriale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Stampi in Metallo</h3>
+                    <p>Specializzati nella realizzazione di stampi metallici robusti e durevoli. Perfetti per applicazioni ad alta pressione e alta precisione.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Componenti Personalizzati</h3>
+                    <p>Da piccoli componenti a stampi più complessi: adattiamo le nostre produzioni alle vostre specifiche esigenze.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container about-container">
+            <h2 class="section-title">Chi Siamo</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>REM Stampi S.N.C.</h3>
+                    <p>Un'azienda a conduzione familiare con esperienza consolidata nel settore della stampa di componenti in plastica e metallo.</p>
+                    
+                    <div class="info-box">
+                        <strong>Proprietari:</strong><br>
+                        Fratelli Eugenio & Roberto Miazzi
+                    </div>
+                    
+                    <div class="info-box">
+                        <strong>Sedi:</strong><br>
+                        <strong>Sede Legale:</strong> Via Righe 49, Piove di Sacco (PD)<br>
+                        <strong>Sede Operativa:</strong> Via II Strada 27-29, Zona Industriale, Fossò (VE)
+                    </div>
+                    
+                    <p>La nostra dedizione alla qualità e all'innovazione ci permette di offrire soluzioni affidabili e competitive nel mercato.</p>
+                </div>
+                <div class="about-content">
+                    <h3>La Nostra Esperienza</h3>
+                    <p>Con anni di esperienza nel settore, garantiamo:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Precisione e qualità garantite</li>
+                        <li>✓ Soluzioni personalizzate</li>
+                        <li>✓ Consegne puntuali</li>
+                        <li>✓ Supporto tecnico specializzato</li>
+                        <li>✓ Prezzi competitivi</li>
+                        <li>✓ Affidabilità e professionalità</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts">
+        <div class="container">
+            <h2 class="section-title">Contatti</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📞 Informazioni Generali</h3>
+                    <p><strong>Telefono:</strong> <a href="tel:+390414165507">041 4165507</a></p>
+                    <p><strong>Fax:</strong> 041 5171035</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@remstampi.it">info@remstampi.it</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 Ufficio Commerciale</h3>
+                    <p>Per richieste di preventivi e informazioni commerciali</p>
+                    <p><strong>Email:</strong> <a href="mailto:commerciale@remstampi.it">commerciale@remstampi.it</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>🔧 Supporto Tecnico</h3>
+                    <p>Per consulenze tecniche e specifiche produttive</p>
+                    <p><strong>Email:</strong> <a href="mailto:tecnico@remstampi.it">tecnico@remstampi.it</a></p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: #1e3c72; margin-bottom: 20px;">Sede Operativa</h3>
+                <p><strong>Via II Strada 27-29</strong><br>
+                Zona Industriale, Fossò (VE)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 REM Stampi. All rights reserved.</p>
+        <p>&copy; 2026 REM Stampi S.N.C. - Tutti i diritti riservati.</p>
+        <p>Fratelli Eugenio & Roberto Miazzi</p>
+        <div class="footer-links">
+            <a href="#servizi">Servizi</a>
+            <a href="#about">Chi Siamo</a>
+            <a href="#contacts">Contatti</a>
+        </div>
     </footer>
 </body>
 </html>
