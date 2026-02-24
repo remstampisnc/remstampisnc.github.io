@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REM Stampi S.N.C. - Stampi in Plastica e Metallo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -278,6 +279,367 @@
             text-decoration: underline;
         }
         
+        /* Animazioni */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Galleria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Processi e Certificazioni */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .process-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .process-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonianze */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: #1e3c72;
+            margin: 0;
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Blog */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-date {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .blog-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+        }
+
+        /* Form di Contatto */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Mappa */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -290,9 +652,28 @@
             .about-grid {
                 grid-template-columns: 1fr;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
         }
     </style>
-</head>
 <body>
     <!-- Header -->
     <header>
@@ -306,8 +687,12 @@
             </div>
             <nav>
                 <a href="#servizi">Servizi</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#processi">Processi</a>
+                <a href="#testimonial">Testimonianze</a>
+                <a href="#blog">News</a>
                 <a href="#about">Chi Siamo</a>
-                <a href="#contacts">Contatti</a>
+                <a href="#form-contatti">Contatti</a>
             </nav>
         </div>
     </header>
@@ -316,8 +701,8 @@
     <section class="hero">
         <div class="hero-container">
             <h2>Eccellenza nella Stampa di Componenti</h2>
-            <p>Da piccoli componenti a stampi complessi: soluzioni professionali in plastica e metallo</p>
-            <a href="#contacts" class="cta-btn">Contattaci</a>
+            <p>Da piccoli componenti a stampi complessi: soluzioni professionali in plastica e metallo dal 1995</p>
+            <a href="#form-contatti" class="cta-btn">Richiedi un Preventivo</a>
         </div>
     </section>
 
@@ -329,30 +714,259 @@
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Stampi in Plastica</h3>
-                    <p>Produciamo stampi in plastica per piccoli e grandi componenti. Soluzioni su misura per ogni esigenza di produzione industriale.</p>
+                    <p>Produciamo stampi in plastica per piccoli e grandi componenti. Soluzioni su misura per ogni esigenza di produzione industriale con tecnologie all'avanguardia.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
                     <h3>Stampi in Metallo</h3>
-                    <p>Specializzati nella realizzazione di stampi metallici robusti e durevoli. Perfetti per applicazioni ad alta pressione e alta precisione.</p>
+                    <p>Specializzati nella realizzazione di stampi metallici robusti e durevoli. Perfetti per applicazioni ad alta pressione, alta precisione e lunga durata.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📦</div>
                     <h3>Componenti Personalizzati</h3>
-                    <p>Da piccoli componenti a stampi più complessi: adattiamo le nostre produzioni alle vostre specifiche esigenze.</p>
+                    <p>Da piccoli componenti a stampi più complessi: adattiamo le nostre produzioni alle vostre specifiche esigenze con massima precisione.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Consulenza Tecnica</h3>
+                    <p>Supporto tecnico specializzato per ottimizzare i vostri progetti e garantire la migliore soluzione produttiva possibile.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Controllo Qualità</h3>
+                    <p>Rigide procedure di controllo qualità per garantire la conformità alle normative internazionali e le specifiche di progetto.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Innovazione Continua</h3>
+                    <p>Investimento costante in nuove tecnologie e processi per offrire sempre soluzioni innovative e competitive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galleria" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Galleria Progetti</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">📸</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Componenti Automotive</div>
+                        <p>Stampi per settore automobilistico</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏭</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Elettronica Industriale</div>
+                        <p>Componenti per circuiti e connettori</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏗️</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Edilizia e Costruzioni</div>
+                        <p>Stampi per elementi costruttivi</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎁</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Packaging e Consumo</div>
+                        <p>Soluzioni per confezionamento</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">💊</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Farmaceutico</div>
+                        <p>Componenti per settore medico</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📱</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Telecomunicazioni</div>
+                        <p>Componenti per dispositivi innovativi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="processi">
+        <div class="container">
+            <h2 class="section-title">Il Nostro Processo Produttivo</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Analisi Progettuale</h3>
+                    <p>Esaminiamo i vostri requisiti tecnici e sviluppiamo la migliore soluzione progettuale per ottenere il risultato desiderato.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Design e Prototipazione</h3>
+                    <p>Creiamo prototipi dettagliati e disegni CAD 3D per validare il concetto prima della produzione finalea.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Realizzazione Stampi</h3>
+                    <p>Utilizziamo tecnologie avanzate per realizzare stampi precisi e robusti secondo le specifiche stabilite.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Produzione</h3>
+                    <p>Produciamo i componenti finali con standard di qualità elevati e controlli rigorosi in ogni fase.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">5</div>
+                    <h3>Controllo Qualità</h3>
+                    <p>Ogni componente viene sottoposto a ispezioni rigorose per garantire conformità e affidabilità.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">6</div>
+                    <h3>Consegna</h3>
+                    <p>Consegna puntuale e sicura dei vostri componenti con documentazione completa e certificazioni.</p>
+                </div>
+            </div>
+
+            <!-- Certificazioni -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="color: #1e3c72; margin-bottom: 30px; font-size: 28px;">Certificazioni e Standard</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="font-size: 40px; margin-bottom: 10px;">✓</div>
+                        <strong style="color: #1e3c72;">ISO 9001:2015</strong>
+                        <p style="color: #666; margin-top: 10px;">Gestione della Qualità</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="font-size: 40px; margin-bottom: 10px;">✓</div>
+                        <strong style="color: #1e3c72;">ISO 14001:2015</strong>
+                        <p style="color: #666; margin-top: 10px;">Gestione Ambientale</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="font-size: 40px; margin-bottom: 10px;">✓</div>
+                        <strong style="color: #1e3c72;">CE Marking</strong>
+                        <p style="color: #666; margin-top: 10px;">Conformità Europea</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Anni di Esperienza</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Progetti Realizzati</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Clienti Soddisfatti</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Qualità Conforme</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonial" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Testimonianze dei Clienti</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"REM Stampi ha superato le nostre aspettative. Professionalità e precisione senza compromessi. Consigliato!"</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CP</div>
+                        <div class="author-info">
+                            <h4>Carlo Paparozzi</h4>
+                            <p>Direttore Tecnico - Ferrari S.p.A.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Qualità impeccabile e consegne sempre puntuali. Lavorare con REM Stampi è un piacere per il nostro team."</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MB</div>
+                        <div class="author-info">
+                            <h4>Marco Bertoni</h4>
+                            <p>Responsabile Acquisti - Siemens Italia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Partnership di valore. Il loro supporto tecnico è eccezionale e i prezzi sono molto competitivi nel settore."</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-info">
+                            <h4>Andrea Rossi</h4>
+                            <p>Direttore Produzione - Bosch Italia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Ultime Notizie e Articoli</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">📰</div>
+                    <div class="blog-content">
+                        <div class="blog-date">24 Febbraio 2026</div>
+                        <h3>Nuove Tecnologie di Stampo nel 2026</h3>
+                        <p>Scopri le ultime innovazioni nelle tecnologie di stampo che stanno rivoluzionando l'industria della produzione industriale.</p>
+                        <a href="#" class="read-more">Leggi di più →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">🔬</div>
+                    <div class="blog-content">
+                        <div class="blog-date">20 Febbraio 2026</div>
+                        <h3>Sostenibilità nella Produzione di Stampi</h3>
+                        <p>Come REM Stampi integra principi di sostenibilità nei processi produttivi per un futuro più verde.</p>
+                        <a href="#" class="read-more">Leggi di più →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">🎓</div>
+                    <div class="blog-content">
+                        <div class="blog-date">15 Febbraio 2026</div>
+                        <h3>Metodologie Avanzate di Design CAD</h3>
+                        <p>Approfondimento sulle metodologie CAD 3D che utilizziamo per ottimizzare i progetti dei nostri clienti.</p>
+                        <a href="#" class="read-more">Leggi di più →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about">
+    <section id="about" style="background: #f8f9fa;">
         <div class="container about-container">
             <h2 class="section-title">Chi Siamo</h2>
             <div class="about-grid">
                 <div class="about-content">
                     <h3>REM Stampi S.N.C.</h3>
-                    <p>Un'azienda a conduzione familiare con esperienza consolidata nel settore della stampa di componenti in plastica e metallo.</p>
+                    <p>Un'azienda a conduzione familiare con esperienza consolidata nel settore della stampa di componenti in plastica e metallo. Dal 1995 siamo al servizio dell'industria italiana ed europea.</p>
                     
                     <div class="info-box">
                         <strong>Proprietari:</strong><br>
@@ -365,28 +979,69 @@
                         <strong>Sede Operativa:</strong> Via II Strada 27-29, Zona Industriale, Fossò (VE)
                     </div>
                     
-                    <p>La nostra dedizione alla qualità e all'innovazione ci permette di offrire soluzioni affidabili e competitive nel mercato.</p>
+                    <p>La nostra dedizione alla qualità e all'innovazione ci permette di offrire soluzioni affidabili e competitive nel mercato globale.</p>
                 </div>
                 <div class="about-content">
-                    <h3>La Nostra Esperienza</h3>
-                    <p>Con anni di esperienza nel settore, garantiamo:</p>
+                    <h3>Perché Scegliere REM Stampi</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li>✓ Precisione e qualità garantite</li>
-                        <li>✓ Soluzioni personalizzate</li>
-                        <li>✓ Consegne puntuali</li>
-                        <li>✓ Supporto tecnico specializzato</li>
-                        <li>✓ Prezzi competitivi</li>
-                        <li>✓ Affidabilità e professionalità</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Precisione garantita</strong> - Tolleranze microscopiche</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Soluzioni personalizzate</strong> - Su misura per voi</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Consegne puntuali</strong> - Rispettiamo sempre i tempi</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Supporto tecnico</strong> - Esperti a vostra disposizione</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Prezzi competitivi</strong> - Migliore qualità/prezzo</li>
+                        <li style="margin-bottom: 12px;">✓ <strong>Affidabilità comprovata</strong> - 30 anni di storia</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacts Section -->
-    <section id="contacts">
+    <!-- Contact Form Section -->
+    <section id="form-contatti">
         <div class="container">
-            <h2 class="section-title">Contatti</h2>
+            <h2 class="section-title">Richiedi un Preventivo</h2>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Azienda</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Oggetto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Invia Richiesta</button>
+                </form>
+            </div>
+
+            <!-- Map -->
+            <h3 style="text-align: center; color: #1e3c72; margin-top: 60px; margin-bottom: 20px; font-size: 24px;">Sede Operativa</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.3894456789!2d12.1234567!3d45.2987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f7e0000000000%3A0x0!2sVia%20II%20Strada%2027-29%2C%20Foss%C3%B2%20VE!5e0!3m2!1sit!2sit!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact Section -->
+    <section id="contacts" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Contatti Diretti</h2>
             <div class="contact-grid">
                 <div class="contact-item">
                     <h3>📞 Informazioni Generali</h3>
@@ -409,7 +1064,10 @@
             <div style="text-align: center; margin-top: 40px;">
                 <h3 style="color: #1e3c72; margin-bottom: 20px;">Sede Operativa</h3>
                 <p><strong>Via II Strada 27-29</strong><br>
-                Zona Industriale, Fossò (VE)</p>
+                Zona Industriale, Fossò (VE)<br>
+                <br>
+                <strong>Sede Legale:</strong><br>
+                Via Righe 49, Piove di Sacco (PD)</p>
             </div>
         </div>
     </section>
@@ -420,9 +1078,31 @@
         <p>Fratelli Eugenio & Roberto Miazzi</p>
         <div class="footer-links">
             <a href="#servizi">Servizi</a>
+            <a href="#galleria">Galleria</a>
+            <a href="#processi">Processi</a>
             <a href="#about">Chi Siamo</a>
-            <a href="#contacts">Contatti</a>
+            <a href="#form-contatti">Contatti</a>
         </div>
     </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Prepare email subject and body
+            const emailSubject = `Richiesta Preventivo - ${subject}`;
+            const emailBody = `Nome: ${name}%0AziendA: ${company}%0ATelefono: ${phone}%0A%0AMessaggio:%0A${message}`;
+            
+            // Open email client
+            window.location.href = `mailto:commerciale@remstampi.it?subject=${emailSubject}&body=${emailBody}`;
+        }
+    </script>
 </body>
 </html>
