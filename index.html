@@ -698,6 +698,25 @@
         .back-to-top:hover {
             transform: translateY(-3px);
         }
+        /* Banner di conferma/errore form */
+        .form-banner {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            z-index: 1000;
+            min-width: 260px;
+            max-width: 90%;
+            padding: 12px 18px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            display: none;
+        }
+        .form-banner.show { display: block; }
+        .form-banner.success { background: linear-gradient(90deg,#22c55e,#16a34a); }
+        .form-banner.error { background: linear-gradient(90deg,#ef4444,#dc2626); }
     </style>
 <body>
     <!-- Header -->
@@ -1115,13 +1134,51 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <!-- Banner di feedback per il form -->
+    <div id="formBanner" class="form-banner" role="status" aria-live="polite"></div>
+
     <script>
-        // Inizializza EmailJS (sostituisci YOUR_USER_ID (public_key) con il tuo user ID EmailJS)
-        (function(){
-            if (window.emailjs) {
-                emailjs.init('zcIIfzJ_hGt4CpRYu');
+        // Carica EmailJS dinamicamente se non presente e inizializza
+        function loadEmailJSSDK(timeout = 7000) {
+            return new Promise((resolve, reject) => {
+                if (window.emailjs) return resolve(window.emailjs);
+
+                // Cerca uno script già inserito dinamicamente
+                var existing = document.querySelector('script[data-emailjs]');
+                if (existing) {
+                    existing.addEventListener('load', () => {
+                        if (window.emailjs) resolve(window.emailjs);
+                        else reject(new Error('EmailJS caricato ma global non trovato'));
+                    });
+                    existing.addEventListener('error', () => reject(new Error('Failed to load EmailJS')));
+                    return;
+                }
+
+                var s = document.createElement('script');
+                s.src = 'https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js';
+                s.async = true;
+                s.setAttribute('data-emailjs', '1');
+                s.onload = function() {
+                    if (window.emailjs) resolve(window.emailjs);
+                    else reject(new Error('EmailJS caricato ma global non trovato'));
+                };
+                s.onerror = function() { reject(new Error('Errore caricamento EmailJS')); };
+                document.head.appendChild(s);
+
+                setTimeout(() => {
+                    if (window.emailjs) resolve(window.emailjs);
+                    else reject(new Error('Timeout caricamento EmailJS'));
+                }, timeout);
+            });
+        }
+
+        (async function initEmailJS() {
+            try {
+                await loadEmailJSSDK();
+                //USER_ID(public key) da Emailjs dashboard
+                if (window.emailjs) emailjs.init('zcIIfzJ_hGt4CpRYu');
+            } catch (err) {
+                console.warn('EmailJS init failed:', err);
             }
         })();
 
@@ -1146,16 +1203,17 @@
                 message: message
             };
 
-            // Sostituisci 'SERVICE_ID' e 'TEMPLATE_ID' con i valori del tuo account EmailJS
             try {
+                await loadEmailJSSDK();
+                if (!window.emailjs) throw new Error('EmailJS non disponibile');
+                //SERVICE_ID E TEMPLATE_ID da Emailjs dashboard
                 await emailjs.send('service_jqeo6gu', 'template_pjf37f8', templateParams);
-                alert('Messaggio inviato con successo. Grazie!');
-                // reset del form
+                    showBanner('Messaggio inviato con successo. Grazie!', 'success');
                 var form = document.querySelector('form[onsubmit]');
                 if (form) form.reset();
             } catch (err) {
                 console.error('EmailJS error:', err);
-                alert('Errore nell\'invio del messaggio. Riprova più tardi.');
+                    showBanner('Errore nell\'invio del messaggio. Riprova più tardi.', 'error');
             } finally {
                 if (submitBtn) submitBtn.disabled = false;
             }
@@ -1186,6 +1244,21 @@
                 backBtn.addEventListener('click', scrollToTop);
             }
         });
+
+        // Funzione per mostrare banner di feedback
+        var bannerTimeout = null;
+        function showBanner(message, type) {
+            var banner = document.getElementById('formBanner');
+            if (!banner) return;
+            banner.textContent = message;
+            banner.classList.remove('success', 'error');
+            banner.classList.add(type === 'error' ? 'error' : 'success');
+            banner.classList.add('show');
+            if (bannerTimeout) clearTimeout(bannerTimeout);
+            bannerTimeout = setTimeout(function() {
+                banner.classList.remove('show');
+            }, 5000);
+        }
     </script>
 </body>
 </html>
