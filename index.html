@@ -1193,10 +1193,14 @@
             const phone = document.getElementById('phone')?.value || '';
             const subject = document.getElementById('subject')?.value || '';
             const message = document.getElementById('message')?.value || '';
+            //TODO: Validazione base dei campi (es. email valida, campi obbligatori)
+            //TODO ADDRESS: Potrebbe essere utile permettere all'utente di inserire un indirizzo di riferimento, ma per ora usiamo quello fisso della sede operativa
+            const address = 'Via II Strada 27-29, Zona Industriale, Fossò (VE)';
 
             const templateParams = {
                 from_name: name,
                 company: company,
+                address: address,
                 from_email: email,
                 reply_to: email,
                 phone: phone,
