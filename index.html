@@ -1176,7 +1176,7 @@
             try {
                 await loadEmailJSSDK();
                 //USER_ID(public key) da Emailjs dashboard
-                if (window.emailjs) emailjs.init('zcIIfzJ_hGt4CpRYu');
+                if (window.emailjs) emailjs.init('PUBLIC_KEY');
             } catch (err) {
                 console.warn('EmailJS init failed:', err);
             }
@@ -1215,7 +1215,7 @@
                 await loadEmailJSSDK();
                 if (!window.emailjs) throw new Error('EmailJS non disponibile');
                 //SERVICE_ID E TEMPLATE_ID da Emailjs dashboard
-                await emailjs.send('service_jqeo6gu', 'template_pjf37f8', templateParams);
+                await emailjs.send('SERVICE_ID', 'TEMPLATE_ID', templateParams);
                     showBanner('Messaggio inviato con successo. Grazie!', 'success');
                 var form = document.querySelector('form[onsubmit]');
                 if (form) form.reset();
