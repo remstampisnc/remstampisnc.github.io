@@ -1115,23 +1115,50 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
     <script>
-        function handleSubmit(event) {
+        // Inizializza EmailJS (sostituisci YOUR_USER_ID (public_key) con il tuo user ID EmailJS)
+        (function(){
+            if (window.emailjs) {
+                emailjs.init('zcIIfzJ_hGt4CpRYu');
+            }
+        })();
+
+        async function handleSubmit(event) {
             event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Prepare email subject and body
-            const emailSubject = `Richiesta Preventivo - ${subject}`;
-            const emailBody = `Nome: ${name}%0AziendA: ${company}%0ATelefono: ${phone}%0A%0AMessaggio:%0A${message}`;
-            
-            // Open email client
-            window.location.href = `mailto:commerciale@remstampi.it?subject=${emailSubject}&body=${emailBody}`;
+            var submitBtn = document.querySelector('.submit-btn');
+            if (submitBtn) submitBtn.disabled = true;
+
+            const name = document.getElementById('name')?.value || '';
+            const company = document.getElementById('company')?.value || '';
+            const email = document.getElementById('email')?.value || '';
+            const phone = document.getElementById('phone')?.value || '';
+            const subject = document.getElementById('subject')?.value || '';
+            const message = document.getElementById('message')?.value || '';
+
+            const templateParams = {
+                from_name: name,
+                company: company,
+                from_email: email,
+                phone: phone,
+                subject: subject,
+                message: message
+            };
+
+            // Sostituisci 'SERVICE_ID' e 'TEMPLATE_ID' con i valori del tuo account EmailJS
+            try {
+                await emailjs.send('service_jqeo6gu', 'template_pjf37f8', templateParams);
+                alert('Messaggio inviato con successo. Grazie!');
+                // reset del form
+                var form = document.querySelector('form[onsubmit]');
+                if (form) form.reset();
+            } catch (err) {
+                console.error('EmailJS error:', err);
+                alert('Errore nell\'invio del messaggio. Riprova più tardi.');
+            } finally {
+                if (submitBtn) submitBtn.disabled = false;
+            }
         }
 
         // Funzioni scroll-to-top
