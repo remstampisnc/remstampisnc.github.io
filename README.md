@@ -19,3 +19,5 @@ Funzionalità<br>
 ✅ Pulsante "Torna su"<br>
 ✅ Design industriale con palette blu scuro + oro<br>
 Il sito è visibile su http://localhost:8080.<br>
+
+Per provare formspree email basta fare il deploy del branch formspree
