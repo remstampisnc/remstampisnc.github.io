@@ -246,6 +246,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Funzione per mostrare banner di feedback
+    var bannerTimeout = null;
+    function showBanner(message, type) {
+        var banner = document.getElementById('formBanner');
+        if (!banner) return;
+        banner.textContent = message;
+        banner.classList.remove('success', 'error');
+        banner.classList.add(type === 'error' ? 'error' : 'success');
+        banner.classList.add('show');
+        if (bannerTimeout) clearTimeout(bannerTimeout);
+        bannerTimeout = setTimeout(function() {
+            banner.classList.remove('show');
+        }, 5000);
+    }
+
     /*const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
