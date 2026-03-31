@@ -198,7 +198,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---- CONTACT FORM ----
-    const contactForm = document.getElementById('contactForm');
+    
+    // Formspree endpoint - sostituisci YOUR_FORM_ID con il tuo ID Formspree
+    // Esempio: https://formspree.io/f/abcd1234
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbdlqe';
+    async function handleSubmit(event) {
+        event.preventDefault();
+        var submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) submitBtn.disabled = true;
+
+        const name = document.getElementById('name')?.value || '';
+        const company = document.getElementById('company')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const phone = document.getElementById('phone')?.value || '';
+        const subject = document.getElementById('subject')?.value || '';
+        const message = document.getElementById('message')?.value || '';
+        try {
+            const formData = new FormData();
+                    formData.append('name', name);
+                    formData.append('company', company);
+                    formData.append('email', email);
+                    formData.append('phone', phone);
+                    formData.append('subject', subject);
+                    formData.append('message', message);
+
+            const resp = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+            });
+
+            if (resp.ok) {
+                    showBanner('Messaggio inviato con successo. Grazie!', 'success');
+                    var form = document.querySelector('form[onsubmit]');
+                    if (form) form.reset();
+            } else {
+                    const data = await resp.json().catch(() => ({}));
+                    const errMsg = data.error || data.errors?.map(e=>e.message).join(', ') || ('Errore invio: ' + resp.status);
+                    console.error('Formspree error:', resp.status, data);
+                    showBanner(errMsg, 'error');
+            }
+        } catch (err) {
+            console.error('Fetch error:', err);
+            showBanner('Errore di rete. Riprova più tardi.', 'error');
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
+    }
+
+    /*const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -232,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
             }, 3000);
         }, 1500);
-    });
+    }); */
 
     // ---- TOUCH SWIPE FOR SLIDER ----
     let touchStartX = 0;
