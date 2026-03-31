@@ -261,6 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleSubmit);
+    }
+
     /*const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
