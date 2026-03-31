@@ -198,11 +198,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---- CONTACT FORM ----
-    
+
     // Formspree endpoint - sostituisci YOUR_FORM_ID con il tuo ID Formspree
     // Esempio: https://formspree.io/f/abcd1234
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbdlqe';
-    async function handleSubmit(event) {
+    window.handleSubmit = async function handleSubmit(event) {
         event.preventDefault();
         var submitBtn = document.querySelector('.submit-btn');
         if (submitBtn) submitBtn.disabled = true;
