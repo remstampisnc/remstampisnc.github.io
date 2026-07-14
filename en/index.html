@@ -3,37 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REM Snc | Molds and Patterns - Industrial Precision Equipment</title>
-    <meta name="description" content="REM Snc - Manufacturer of checking fixtures, cutting jigs, welding jigs, molds and patterns for industrial applications. Since 1973.">
+    <title>REM Stampi | Specialists in Aluminium Mould Manufacturing</title>
+    <meta name="description" content="REM Stampi - Specialists in aluminium mould manufacturing for industrial sectors. CAD design, CNC machining up to 5 axes. Fossò (VE) Italy.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar__inner">
+            <a href="tel:+390414165507" class="topbar__item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>041 4165507</span>
+            </a>
+            <a href="mailto:info@remstampi.it" class="topbar__item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>info@remstampi.it</span>
+            </a>
+            <span class="topbar__item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>Via Seconda Strada 27/29 Z.I. Fossò (VE) – Italy</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="header__container">
-            <a href="#" class="header__logo">
-                <span class="logo__text">REM</span>
-                <span class="logo__sub">s.n.c..</span>
+            <a href="#home" class="header__logo">
+                <span class="logo__rem">REM</span>
+                <span class="logo__stampi">STAMPI</span>
             </a>
             <nav class="header__nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="#home" class="nav__link active">Home</a></li>
+                    <li><a href="#advantages" class="nav__link">Advantages</a></li>
                     <li><a href="#about" class="nav__link">About Us</a></li>
-                    <li><a href="#history" class="nav__link">History</a></li>
-                    <li><a href="#products" class="nav__link">Products</a></li>
-                    <li><a href="#certifications" class="nav__link">Certifications</a></li>
-                    <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+                    <li><a href="#services" class="nav__link">Services</a></li>
+                    <li><a href="#sectors" class="nav__link">Sectors</a></li>
+                    <li><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header__lang">
-                <a href="../index.html" class="lang__link">IT</a>
-                <span>|</span>
-                <a href="#" class="lang__link active">EN</a>
+            <div class="header__right">
+                <div class="header__lang">
+                    <a href="../index.html" class="lang__link">IT</a>
+                    <span>|</span>
+                    <a href="#" class="lang__link active">EN</a>
+                </div>
+                <a href="#contact" class="btn btn--nav-cta">Request a Quote</a>
             </div>
             <button class="header__burger" id="burger" aria-label="Toggle Menu">
                 <span></span>
@@ -43,441 +64,319 @@
         </div>
     </header>
 
-    <!-- HERO SLIDER -->
+    <!-- HERO -->
     <section class="hero" id="home">
-        <div class="hero__slider">
-            <!-- Slide 1 -->
-            <div class="hero__slide active" data-index="0">
-                <div class="hero__bg" style="background-image: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0d1b2e 100%);">
-                    <div class="hero__bg-pattern"></div>
-                </div>
-                <div class="hero__content">
-                    <h1 class="hero__title">REM Srl</h1>
-                    <p class="hero__subtitle">Precision control equipment for industrial applications</p>
-                    <a href="#contact" class="btn btn--primary">Contact Us</a>
-                </div>
+        <div class="hero__inner">
+            <div class="hero__content" data-animate="fade-right">
+                <h1 class="hero__heading">
+                    <span class="hero__heading--pre">Specialists in the manufacturing of</span>
+                    <span class="hero__heading--main">ALUMINIUM MOULDS</span>
+                </h1>
+                <div class="hero__line"></div>
+                <p class="hero__text">
+                    From CAD design to production.<br>
+                    Over thirty years of experience in precision engineering<br>
+                    allow us to transform technical challenges into reliable<br>
+                    and efficient solutions.
+                </p>
+                <a href="#about" class="btn btn--hero">Discover More</a>
             </div>
-            <!-- Slide 2 -->
-            <div class="hero__slide" data-index="1">
-                <div class="hero__bg" style="background-image: linear-gradient(135deg, #1a0a28 0%, #2a1a4a 50%, #1b0d2e 100%);">
-                    <div class="hero__bg-pattern"></div>
-                </div>
-                <div class="hero__content">
-                    <h1 class="hero__title">Our History</h1>
-                    <p class="hero__subtitle">Specialized in industrial precision since 1973</p>
-                    <a href="#history" class="btn btn--primary">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="hero__slide" data-index="2">
-                <div class="hero__bg" style="background-image: linear-gradient(135deg, #0a2818 0%, #1a4a2a 50%, #0d2e1b 100%);">
-                    <div class="hero__bg-pattern"></div>
-                </div>
-                <div class="hero__content">
-                    <h1 class="hero__title">Passion for Precision</h1>
-                    <p class="hero__subtitle">Technology and craftsmanship at the service of industry</p>
-                    <a href="#products" class="btn btn--primary">Our Products</a>
+            <div class="hero__visual">
+                <div class="hero__img-placeholder">
+                    <i class="fas fa-industry" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
-        <!-- Slider Controls -->
-        <div class="hero__controls">
-            <button class="hero__arrow hero__arrow--prev" aria-label="Previous slide">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="hero__dots">
-                <button class="hero__dot active" data-slide="0"></button>
-                <button class="hero__dot" data-slide="1"></button>
-                <button class="hero__dot" data-slide="2"></button>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="statsbar">
+        <div class="statsbar__inner">
+            <div class="statsbar__item">
+                <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                <div class="statsbar__text">
+                    <strong>Over 30 years</strong>
+                    <span>of experience</span>
+                </div>
             </div>
-            <button class="hero__arrow hero__arrow--next" aria-label="Next slide">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="statsbar__item">
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <div class="statsbar__text">
+                    <strong>4 CNC machining centres</strong>
+                    <span>up to 5 axes</span>
+                </div>
+            </div>
+            <div class="statsbar__item">
+                <i class="fas fa-desktop" aria-hidden="true"></i>
+                <div class="statsbar__text">
+                    <strong>Advanced CAD-CAM</strong>
+                    <span>software</span>
+                </div>
+            </div>
+            <div class="statsbar__item">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                <div class="statsbar__text">
+                    <strong>From design</strong>
+                    <span>to production</span>
+                </div>
+            </div>
+            <div class="statsbar__item">
+                <i class="fas fa-headset" aria-hidden="true"></i>
+                <div class="statsbar__text">
+                    <strong>Technical support</strong>
+                    <span>and after-sales service</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADVANTAGES -->
+    <section class="vantaggi" id="advantages">
+        <div class="container">
+            <div class="sec-header" data-animate="fade-up">
+                <h2 class="sec-title">ADVANTAGES OF ALUMINIUM MOULDS</h2>
+                <div class="sec-line"></div>
+            </div>
+            <div class="vantaggi__grid">
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
+                    <h3>COST EFFICIENCY</h3>
+                    <p>Lower construction and maintenance costs compared to steel moulds.</p>
+                </div>
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-feather-alt" aria-hidden="true"></i></div>
+                    <h3>LIGHTWEIGHT</h3>
+                    <p>Reduced weight facilitating handling and installation.</p>
+                </div>
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-magic" aria-hidden="true"></i></div>
+                    <h3>SPECIAL FINISHES</h3>
+                    <p>Possibility of achieving high-quality surface finishes.</p>
+                </div>
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-crosshairs" aria-hidden="true"></i></div>
+                    <h3>PRECISION</h3>
+                    <p>CNC machining up to 5 axes for excellent precision results.</p>
+                </div>
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-wrench" aria-hidden="true"></i></div>
+                    <h3>MODIFICATION &amp; OPTIMISATION</h3>
+                    <p>Easy to modify and optimise to adapt to new requirements.</p>
+                </div>
+                <div class="vantaggio" data-animate="fade-up">
+                    <div class="vantaggio__ico"><i class="fas fa-thermometer-half" aria-hidden="true"></i></div>
+                    <h3>HEAT DISSIPATION</h3>
+                    <p>Higher thermal conductivity for rapid heat dissipation.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ABOUT US -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about__grid">
-                <div class="about__text" data-animate="fade-right">
-                    <span class="section__tag">About Us</span>
-                    <h2 class="section__title">Technology<br>and <em>craftsmanship</em>.</h2>
-                    <p class="about__desc">
-                        REM Srl is a comprehensive manufacturer and designer of a diverse range of products, including 
-                        checking fixtures, welding and assembly jigs, cutting jigs, rotational moulds, polystyrene models, 
-                        foundry patterns, and prototypes. The company operates in a wide spectrum of materials, ensuring 
-                        versatility and adaptability to various industrial applications.
-                    </p>
-                    <div class="about__stats">
-                        <div class="stat">
-                            <span class="stat__number" data-count="50">0</span><span class="stat__plus">+</span>
-                            <span class="stat__label">Years of experience</span>
+    <section class="split-section" id="about">
+        <div class="split-section__inner">
+            <div class="split-section__image" data-animate="fade-right">
+                <div class="split-img-placeholder split-img--workshop">
+                    <img src="../img/chi_siamo1.jpg" alt="REM Stampi Workshop" class="split-img">
+                </div>
+            </div>
+            <div class="split-section__content" data-animate="fade-left">
+                <span class="split-section__tag">Our company</span>
+                <h2 class="split-section__title">ABOUT US</h2>
+                <div class="split-section__line"></div>
+                <p>REM Stampi snc was founded in 1987 by brothers Eugenio and Roberto Miazzi, with the mission of producing high-quality aluminium moulds for the industrial sector.</p>
+                <p>Over the years the company has increasingly specialised in the design and manufacture of moulds, continuously investing in technology and training. Today it relies on 4 CNC machining centres, one of which has 5 axes, state-of-the-art CAD-CAM software and a highly qualified technical team.</p>
+                <p>We offer a complete and personalised service: from project feasibility assessment and 3D design through to mould manufacture and production start-up.</p>
+                <div class="split-stats">
+                    <div class="split-stat">
+                        <strong>1987</strong>
+                        <span>Year of foundation</span>
+                    </div>
+                    <div class="split-stat">
+                        <strong>4</strong>
+                        <span>CNC centres up to 5 axes</span>
+                    </div>
+                    <div class="split-stat">
+                        <strong>30+</strong>
+                        <span>Years of experience</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn--outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR SERVICES -->
+    <section class="split-section split-section--gray split-section--reverse" id="services">
+        <div class="split-section__inner">
+            <div class="split-section__content" data-animate="fade-right">
+                <span class="split-section__tag">What we offer</span>
+                <h2 class="split-section__title">OUR SERVICES</h2>
+                <div class="split-section__line"></div>
+                <p>We offer a complete range of services for the design and manufacture of aluminium moulds, from the initial concept through to after-sales support.</p>
+                <div class="servizi-cards">
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>CAD CAM 3D Design</h4>
+                            <p>Advanced design with state-of-the-art software for maximum precision and product optimisation.</p>
                         </div>
-                        <div class="stat">
-                            <span class="stat__number" data-count="500">0</span><span class="stat__plus">+</span>
-                            <span class="stat__label">Completed projects</span>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-cube" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>Mould Manufacturing</h4>
+                            <p>Manufacture of aluminium moulds with CNC machining up to 5 axes for centesimal tolerances.</p>
                         </div>
-                        <div class="stat">
-                            <span class="stat__number" data-count="100">0</span><span class="stat__plus">+</span>
-                            <span class="stat__label">Satisfied clients</span>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>Laser Scanning &amp; Reverse Engineering</h4>
+                            <p>3D acquisition of existing components for faithful replicas or modifications.</p>
+                        </div>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>Maintenance &amp; Assistance</h4>
+                            <p>Preventive and corrective maintenance service to extend the useful life of moulds.</p>
+                        </div>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>Testing &amp; Quality Control</h4>
+                            <p>Dimensional verification and functional testing to ensure conformity of the finished product.</p>
+                        </div>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-card__icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+                        <div>
+                            <h4>Prototyping &amp; Resin Models</h4>
+                            <p>Prototypes and resin models to validate the design before full production.</p>
                         </div>
                     </div>
                 </div>
-                <div class="about__image" data-animate="fade-left">
-                    <div class="about__image-wrapper">
-                        <div class="about__image-placeholder">
-                            <i class="fas fa-industry"></i>
-                            <span>REM Facility</span>
-                        </div>
-                        <div class="about__image-accent"></div>
-                    </div>
+                <a href="#contact" class="btn btn--outline">Request a Quote</a>
+            </div>
+            <div class="split-section__image" data-animate="fade-left">
+                <div class="split-img-placeholder split-img--cnc">
+                    <img src="../img/lavoratore.jpg" alt="CNC Work" class="split-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HISTORY -->
-    <section class="history" id="history">
-        <div class="container">
-            <div class="history__header" data-animate="fade-up">
-                <span class="section__tag section__tag--light">Our History</span>
-                <h2 class="section__title section__title--light">From tradition<br>to <em>innovation</em>.</h2>
-            </div>
-            <div class="history__timeline">
-                <div class="timeline__item" data-animate="fade-up">
-                    <div class="timeline__year">1973</div>
-                    <div class="timeline__content">
-                        <h3>The Foundation</h3>
-                        <p>REM was born as a foundry pattern manufacturer, drawing on family expertise dating back to the early Sixties.</p>
-                    </div>
-                </div>
-                <div class="timeline__item" data-animate="fade-up">
-                    <div class="timeline__year">1990</div>
-                    <div class="timeline__content">
-                        <h3>Expansion</h3>
-                        <p>Thanks to a high level of specialization, the company has gradually and continuously expanded, focusing its efforts on product quality.</p>
-                    </div>
-                </div>
-                <div class="timeline__item" data-animate="fade-up">
-                    <div class="timeline__year">2005</div>
-                    <div class="timeline__content">
-                        <h3>Technological Innovation</h3>
-                        <p>Introduction of state-of-the-art CNC machines and 3D design software for maximum precision.</p>
-                    </div>
-                </div>
-                <div class="timeline__item" data-animate="fade-up">
-                    <div class="timeline__year">Today</div>
-                    <div class="timeline__content">
-                        <h3>Industrial Excellence</h3>
-                        <p>ISO 9001:2015 certified, we continue to pursue perfection in every project, serving clients worldwide.</p>
-                    </div>
+    <!-- APPLICATION SECTORS -->
+    <section class="split-section" id="sectors">
+        <div class="split-section__inner">
+            <div class="split-section__image" data-animate="fade-right">
+                <div class="split-img-placeholder split-img--sectors">
+                    <img src="../img/settori.jpg" alt="Application Sectors" class="split-img">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
-        <div class="container">
-            <div class="products__header" data-animate="fade-up">
-                <span class="section__tag">Our Products</span>
-                <h2 class="section__title">Solutions<br>for <em>industry</em>.</h2>
-            </div>
-            <div class="products__grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <i class="fas fa-drafting-compass"></i>
+            <div class="split-section__content" data-animate="fade-left">
+                <span class="split-section__tag">Where we operate</span>
+                <h2 class="split-section__title">APPLICATION SECTORS</h2>
+                <div class="split-section__line"></div>
+                <p>Our aluminium moulds are used in numerous industrial sectors, thanks to the versatility of the material and the precision of the machining.</p>
+                <div class="settori-cards">
+                    <div class="settore-card">
+                        <div class="settore-card__thumb" style="background: linear-gradient(135deg, #8b7355, #c4a882);">
+                            <i class="fas fa-couch" aria-hidden="true"></i>
                         </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/checking-fixtures.html" class="btn btn--small">Read More</a>
+                        <div>
+                            <h4>Furniture and Design</h4>
+                            <p>Moulds for decorative and structural components in the furniture and interior design sector.</p>
                         </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Checking Fixtures</h3>
-                        <p class="product-card__desc">We design and manufacture checking fixtures and supports in aluminium, resin, and electrowelded iron.</p>
+                    <div class="settore-card">
+                        <div class="settore-card__thumb" style="background: linear-gradient(135deg, #1a3566, #2d5aa0);">
+                            <i class="fas fa-car" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Automotive</h4>
+                            <p>Moulds for panels, linings and technical components for the automotive sector.</p>
+                        </div>
+                    </div>
+                    <div class="settore-card">
+                        <div class="settore-card__thumb" style="background: linear-gradient(135deg, #2c3e50, #4a6fa5);">
+                            <i class="fas fa-robot" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Industry and Automation</h4>
+                            <p>Equipment and moulds for automated production lines and industrial applications.</p>
+                        </div>
+                    </div>
+                    <div class="settore-card">
+                        <div class="settore-card__thumb" style="background: linear-gradient(135deg, #1a6b3c, #27ae60);">
+                            <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Fitness and Wellness</h4>
+                            <p>Moulds for sports equipment, fitness machines and wellness products.</p>
+                        </div>
+                    </div>
+                    <div class="settore-card">
+                        <div class="settore-card__thumb" style="background: linear-gradient(135deg, #555, #888);">
+                            <i class="fas fa-blender" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Home Appliances</h4>
+                            <p>Moulds for casings, panels and structural components of large and small appliances.</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Product 2 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <i class="fas fa-cut"></i>
-                        </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/cutting-jigs.html" class="btn btn--small">Read More</a>
-                        </div>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Waterjet &amp; Cutting Jigs</h3>
-                        <p class="product-card__desc">We manufacture waterjet and cutting jigs for any industrial application.</p>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/welding-jigs.html" class="btn btn--small">Read More</a>
-                        </div>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Welding &amp; Assembly Jigs</h3>
-                        <p class="product-card__desc">Welding and assembly jigs for the automotive and manufacturing industry.</p>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/automations.html" class="btn btn--small">Read More</a>
-                        </div>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Automations</h3>
-                        <p class="product-card__desc">Custom industrial automation solutions to optimize manufacturing processes.</p>
-                    </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                            <i class="fas fa-cubes"></i>
-                        </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/molds.html" class="btn btn--small">Read More</a>
-                        </div>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Thermoforming &amp; Rotational Molds</h3>
-                        <p class="product-card__desc">Design and production of thermoforming and rotational moulding tools.</p>
-                    </div>
-                </div>
-                <!-- Product 6 -->
-                <div class="product-card" data-animate="fade-up">
-                    <div class="product-card__image">
-                        <div class="product-card__placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
-                            <i class="fas fa-shapes"></i>
-                        </div>
-                        <div class="product-card__overlay">
-                            <a href="prodotti/patterns-prototypes.html" class="btn btn--small">Read More</a>
-                        </div>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Patterns &amp; Prototypes</h3>
-                        <p class="product-card__desc">Foundry patterns, polystyrene models and rapid prototyping for every need.</p>
-                    </div>
-                </div>
+                <a href="#contact" class="btn btn--outline">Contact Us</a>
             </div>
         </div>
     </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="certification" id="certifications">
-        <div class="container">
-            <div class="certification__grid">
-                <div class="certification__text" data-animate="fade-right">
-                    <span class="section__tag section__tag--light">Certified Quality</span>
-                    <h2 class="section__title section__title--light">"The pursuit<br>of <em>perfection</em>."</h2>
-                    <p class="certification__desc">
-                        Our quality management system is certified to UNI EN ISO 9001:2015, 
-                        guaranteeing the highest level of reliability and precision at every stage of the production process.
-                    </p>
-                    <a href="../Certificato-ISO-90012015-Italiano_Inglese.pdf" class="btn btn--outline-light" download>
-                        <i class="fas fa-download"></i> Download Certification
-                    </a>
-                </div>
-                <div class="certification__badge" data-animate="fade-left">
-                    <div class="badge">
-                        <div class="badge__icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="badge__text">
-                            <span class="badge__label">Certified</span>
-                            <span class="badge__title">ISO 9001:2015</span>
-                            <span class="badge__sub">Quality Management System</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUTOMOTIVE SECTION -->
-    <section class="automotive">
-        <div class="container">
-            <div class="automotive__content" data-animate="fade-up">
-                <h2 class="section__title">"Solutions<br>for <em>automotive</em>."</h2>
-                <p class="automotive__desc">
-                    For over fifty years we have been providing precision solutions to the main players in the automotive sector, 
-                    collaborating with the most important manufacturers and tier-one suppliers.
-                </p>
-                <div class="automotive__features">
-                    <div class="feature">
-                        <div class="feature__icon"><i class="fas fa-cog"></i></div>
-                        <h4>Precision</h4>
-                        <p>Guaranteed centesimal tolerances</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature__icon"><i class="fas fa-clock"></i></div>
-                        <h4>Punctuality</h4>
-                        <p>Delivery deadlines always met</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature__icon"><i class="fas fa-handshake"></i></div>
-                        <h4>Reliability</h4>
-                        <p>Trusted partner since 1973</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact__grid">
-                <div class="contact__info" data-animate="fade-right">
-                    <span class="section__tag">Contact</span>
-                    <h2 class="section__title">Let's talk about<br>your <em>project</em>.</h2>
-                    <p class="contact__desc">For any questions or quote requests, please don't hesitate to contact us. Our team is at your disposal.</p>
-                    
-                    <div class="contact__details">
-                        <div class="contact__item">
-                            <div class="contact__icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <strong>Address</strong>
-                                <p>Via II Strada 27-29<br>Zona Industriale, Fossò (VE) - Italy</p>
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contact__icon"><i class="fas fa-phone"></i></div>
-                            <div>
-                                <strong>Phone</strong>
-                                <p><a href="tel:+390414165507">+39 041 4165507</a></p>
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contact__icon"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <strong>Email</strong>
-                                <p><a href="mailto:info@remstampi.it">info@remstampi.it</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact__social">
-                        <a href="https://it.linkedin.com/company/rem-resine-modelli-calibri" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.paginegialle.it/fosso-ve/rem-stampi" target="_blank" aria-label="Pagine Gialle">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact__form-wrapper" data-animate="fade-left">
-                    <form class="contact__form" id="contactForm">
-                        <div class="form__group">
-                            <input type="text" id="name" name="name" placeholder="Your name *" required>
-                        </div>
-                        <div class="form__group">
-                            <input type="email" id="email" name="email" placeholder="Your email *" required>
-                        </div>
-                        <div class="form__group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="form__group">
-                            <textarea id="message" name="message" rows="5" placeholder="Your message *" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAP -->
-    <div class="map">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.634490528434!2d12.0462209!3d45.3965435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ec66c50748191%3A0xd5d13b3be2e92bf7!2sRem%20Stampi%20s.n.c.!5e0!3m2!1sen!2sit!4v1772027236974!5m2!1sen!2sit"
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </div>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer__grid">
-                <div class="footer__col">
-                    <a href="#" class="footer__logo">
-                        <span class="logo__text">REM</span>
-                        <span class="logo__sub">s.n.c..</span>
+                <div class="footer__brand">
+                    <a href="#home" class="footer__logo">
+                        <span class="logo__rem">REM</span>
+                        <span class="logo__stampi--footer">STAMPI</span>
                     </a>
-                    <p class="footer__about">
-                        REM has been producing foundry patterns since 1973. Thanks to a high level of specialization, 
-                        we have gradually expanded, focusing our efforts on product quality and customer satisfaction.
-                    </p>
+                    <p class="footer__desc">We manufacture aluminium moulds for companies operating in various industrial sectors, developing personalised and functional solutions.</p>
                 </div>
-                <div class="footer__col">
-                    <h4 class="footer__heading">Our Solutions</h4>
-                    <ul class="footer__links">
-                        <li><a href="prodotti/checking-fixtures.html">Checking Fixtures</a></li>
-                        <li><a href="prodotti/cutting-jigs.html">Cutting Jigs</a></li>
-                        <li><a href="prodotti/welding-jigs.html">Welding Jigs</a></li>
-                        <li><a href="prodotti/automations.html">Automations</a></li>
-                        <li><a href="prodotti/molds.html">Rotational Molds</a></li>
-                        <li><a href="prodotti/patterns-prototypes.html">Patterns &amp; Prototypes</a></li>
+                <div class="footer__contacts">
+                    <ul class="footer__clist">
+                        <li>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Via Seconda Strada 27/29<br>Z.I. Fossò (VE) – Italy</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+390414165507">+39 041 4165507</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:info@remstampi.it">info@remstampi.it</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-receipt" aria-hidden="true"></i>
+                            <span>VAT 03612790278</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer__col">
-                    <h4 class="footer__heading">Useful Links</h4>
-                    <ul class="footer__links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#history">Our History</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4 class="footer__heading">Contact</h4>
-                    <ul class="footer__contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Via II Strada 27-29 - Zona Industriale, Fossò (VE)</li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+390414165507">+39 041 4165507</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@remstampi.it">info@remstampi.it</a></li>
-                    </ul>
-                    <div class="footer__social">
-                        <a href="https://it.linkedin.com/company/rem-resine-modelli-calibri" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.paginegialle.it/fosso-ve/rem-stampi" target="_blank" aria-label="Pagine Gialle">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </a>
-                    </div>
+                <div class="footer__cta">
+                    <a href="mailto:info@remstampi.it" class="btn btn--footer-cta">Request a Quote</a> 
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2024 REM Srl | All rights reserved | <a href="#">Privacy Policy</a> - <a href="#">Cookie Policy</a></p>
+                <p>&copy; 2024 REM Stampi S.n.c. | All rights reserved | <a href="#">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
 
     <!-- BACK TO TOP -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <script src="../js/main.js"></script>
